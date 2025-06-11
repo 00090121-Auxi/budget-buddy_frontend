@@ -3,4 +3,7 @@
 Correrlo con:   
 cd budget-buddy_frontend  
 npm install  
-npm run dev  
+npm run dev
+
+Agregar...
+- sidebar.html
