@@ -9,6 +9,7 @@ import flatpickr from "flatpickr";
 import Dropzone from "dropzone";
 
 import chart03 from "./components/charts/chart-03";
+import chart01 from "./components/charts/chart-01";
 import "./components/calendar-init.js";
 import "./components/image-resize";
 
@@ -49,7 +50,8 @@ if (dropzoneArea.length) {
 // Document Loaded
 document.addEventListener("DOMContentLoaded", () => {
   chart03();
-  map01();
+  chart01();
+  //map01();
 });
 
 // Get the current year
