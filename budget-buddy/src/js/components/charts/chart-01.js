@@ -1,29 +1,36 @@
 import ApexCharts from "apexcharts";
 
-// ===== chartOne
+// ===== chartOne (agrupado)
 const chart01 = () => {
   const chartOneOptions = {
-    series: [
-      {
-        name: "Sales",
-        data: [168, 385, 201, 298, 187, 195, 291, 110, 215, 390, 280, 112],
-      },
-    ],
-    colors: ["#465fff"],
     chart: {
       fontFamily: "Outfit, sans-serif",
       type: "bar",
-      height: 180,
+      height: 260,
       toolbar: {
         show: false,
       },
     },
+    series: [
+      {
+        name: "Income",
+        data: [800, 950, 900, 1000, 1050, 1100, 1200, 1150, 1000, 950, 900, 850],
+      },
+      {
+        name: "Expenses",
+        data: [300, 400, 350, 500, 490, 600, 700, 620, 580, 500, 400, 300],
+      },
+    ],
+    colors: ["#465fff", "#6495ED"],
     plotOptions: {
       bar: {
         horizontal: false,
-        columnWidth: "39%",
+        columnWidth: "75%",
         borderRadius: 5,
         borderRadiusApplication: "end",
+        dataLabels: {
+          position: "top",
+        },
       },
     },
     dataLabels: {
@@ -31,23 +38,13 @@ const chart01 = () => {
     },
     stroke: {
       show: true,
-      width: 4,
+      width: 2,
       colors: ["transparent"],
     },
     xaxis: {
       categories: [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
+        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
       ],
       axisBorder: {
         show: false,
@@ -55,51 +52,39 @@ const chart01 = () => {
       axisTicks: {
         show: false,
       },
+      labels: {
+        style: { colors: "#6b7280" }
+      }
+    },
+    yaxis: {
+      labels: {
+        style: { colors: "#6b7280" }
+      }
     },
     legend: {
-      show: true,
       position: "top",
       horizontalAlign: "left",
       fontFamily: "Outfit",
-
-      markers: {
-        radius: 99,
-      },
-    },
-    yaxis: {
-      title: false,
-    },
-    grid: {
-      yaxis: {
-        lines: {
-          show: true,
-        },
-      },
+      labels: { colors: "#6b7280" },
+      markers: { radius: 99 },
     },
     fill: {
       opacity: 1,
     },
-
     tooltip: {
-      x: {
-        show: false,
-      },
       y: {
         formatter: function (val) {
-          return val;
+          return `$${val}`;
         },
       },
     },
   };
 
-  const chartSelector = document.querySelectorAll("#chartOne");
+  const chartSelector = document.querySelector("#chartOne");
 
-  if (chartSelector.length) {
-    const chartFour = new ApexCharts(
-      document.querySelector("#chartOne"),
-      chartOneOptions,
-    );
-    chartFour.render();
+  if (chartSelector) {
+    const chart = new ApexCharts(chartSelector, chartOneOptions);
+    chart.render();
   }
 };
 

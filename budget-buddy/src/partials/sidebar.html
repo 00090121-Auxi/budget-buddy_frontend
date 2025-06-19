@@ -141,13 +141,11 @@
           <li>
             <a
               href="report.html"
-              @click="selected = (selected === 'Report' ? '':'Report')"
               class="menu-item group"
-              :class=" (selected === 'Report') && (page === 'report') ? 'menu-item-active' : 'menu-item-inactive'"
+              :class="window.currentPage === 'report' ? 'menu-item-active' : 'menu-item-inactive'"
             >
               <svg
-                :class="(selected === 'Categories') && (page === 'categories') ? 'menu-item-icon-active'  :'menu-item-icon-inactive'"
-                class = "stroke-gray-500 group-hover:stroke-gray-700 dark:stroke-gray-400 dark:group-hover:stroke-gray-300"
+                :class="window.currentPage === 'report' ? 'menu-item-stroke-active' : 'menu-item-stroke-inactive'"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -180,13 +178,11 @@
           <li>
             <a
               href="categories.html"
-              @click="selected = (selected === 'Categories' ? '':'Categories')"
               class="menu-item group"
-              :class=" (selected === 'Categories') && (page === 'categories') ? 'menu-item-active' : 'menu-item-inactive'"
+              :class="window.currentPage === 'categories' ? 'menu-item-active' : 'menu-item-inactive'"
             >
               <svg
-                :class="(selected === 'Categories') && (page === 'categories') ? 'menu-item-icon-active'  :'menu-item-icon-inactive'"
-                class = "stroke-gray-500 group-hover:stroke-gray-700 dark:stroke-gray-400 dark:group-hover:stroke-gray-300"
+                :class="window.currentPage === 'categories' ? 'menu-item-stroke-active' : 'menu-item-stroke-inactive'"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -218,14 +214,12 @@
           <!-- Menu Item Financial Advice -->
           <li>
             <a
-              href="financialAdvice.html"
-              @click="selected = (selected === 'Financial Adivice' ? '':'Financial Adivice')"
+              href="financialAdv.html"
               class="menu-item group"
-              :class=" (selected === 'Financial Advice') && (page === 'financial advice') ? 'menu-item-active' : 'menu-item-inactive'"
+              :class="window.currentPage === 'financialAdv' ? 'menu-item-active' : 'menu-item-inactive'"
             >
               <svg
-                :class="(selected === 'Categories') && (page === 'categories') ? 'menu-item-icon-active'  :'menu-item-icon-inactive'"
-                class = "stroke-gray-500 group-hover:stroke-gray-700 dark:stroke-gray-400 dark:group-hover:stroke-gray-300"
+                :class="window.currentPage === 'financialAdv' ? 'menu-item-stroke-active' : 'menu-item-stroke-inactive'"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -258,13 +252,11 @@
           <li>
             <a
               href="settings.html"
-              @click="selected = (selected === 'Settings' ? '':'Settings')"
               class="menu-item group"
-              :class=" (selected === 'Settings') && (page === 'settings') ? 'menu-item-active' : 'menu-item-inactive'"
+              :class="window.currentPage === 'settings' ? 'menu-item-active' : 'menu-item-inactive'"
             >
               <svg
-                :class="(selected === 'Categories') && (page === 'categories') ? 'menu-item-icon-active'  :'menu-item-icon-inactive'"
-                class = "stroke-gray-500 group-hover:stroke-gray-700 dark:stroke-gray-400 dark:group-hover:stroke-gray-300"
+                :class="window.currentPage === 'settings' ? 'menu-item-stroke-active' : 'menu-item-stroke-inactive'"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"

@@ -11,11 +11,11 @@
       BudgetBuddy
     </title>
     <script>
-        window.currentPage = 'transactions';
+        window.currentPage = 'financialAdv';
     </script>
   </head>
   <body
-    x-data="{ page: 'transactions', 'loaded': true, 'darkMode': false, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }"
+    x-data="{ page: 'financialAdv', 'loaded': true, 'darkMode': false, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }"
     x-init="
          darkMode = JSON.parse(localStorage.getItem('darkMode'));
          $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)));"
@@ -44,22 +44,32 @@
         <!-- ===== Header End ===== -->
 
         <!-- ===== Main Content Start ===== -->
-        <main>
-            <div
-              class="mb-3 flex items-center justify-between border-b border-gray-100 pb-3 dark:border-gray-800"
-            >
-              <h5
-                class="text-lg font-semibold text-gray-800 dark:text-white/90"
-              >
-                Notification
-              </h5>
-          <div class="p-4 mx-auto max-w-(--breakpoint-2xl) md:p-6">
-            <!--<div class="grid grid-cols-8 gap-4 md:gap-6"> -->
-              <div class="col-span-12 xl:col-span-7">
-                <!-- ====== Table One Start -->
-                <include src="./partials/table/table-01.html" />
-                <!-- ====== Table One End -->
+        <main >
+          <!-- Titulo -->
+          <div class="p-4 md:ml-[15px] mt-4">
+            <div class="mb-1">
+              <h2 class="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
+                Financial Advice
+              </h2>
+                <span class="text-lg font-normal text-gray-500 dark:text-gray-400">
+                  Here's a summary of your transactions for financial advice
+                </span>
+            </div>
+          </div>
+          <!-- Table and card -->
+          <div class="p-4 mx-auto max-w-7xl">
+            <div class="flex flex-row gap-6">
+              
+              <!-- Table -->
+              <div class="w-1/3">
+                <include src="./partials/table/tableTrans.html" />
               </div>
+
+              <!-- Card -->
+              <div class="w-2/3">
+                <include src="./partials/cards/transCard.html" />
+              </div>
+
             </div>
           </div>
         </main>
@@ -68,5 +78,7 @@
       <!-- ===== Content Area End ===== -->
     </div>
     <!-- ===== Page Wrapper End ===== -->
+    <script src="./js/components/cards/transCard.js"></script>
+    <script src="./js/components/table-02.js"></script>
   </body>
 </html>
